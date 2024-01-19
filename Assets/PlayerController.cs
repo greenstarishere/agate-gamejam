@@ -7,27 +7,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
-    public Transform cam;
-    //public Animator animator;
     public float gravity = -9.8f;
     private Vector3 velocity;
     private bool isCharacterMoving;
     public float playerSPEED = 10f;
     private int jumpCount = 0;
     public float playerJUMPFORCE = 6.5f;
-    public GameObject skin;
+    public Transform camTransfrom;
+    public Transform skinTransform;
 
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3 (horizontal, 0f, vertical).normalized;
-        Quaternion cameraRotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
-
-        //direction = Quaternion.AngleAxis(cam.transform.rotation.y, Vector3.up);
-        //Vector3 cameraEuler = cam.transform.rotation.eulerAngles;
-        //Quaternion cameraRotation = Quaternion.AngleAxis(cameraEuler.y, Vector3.up);
-
+        direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
 
         //Gravity
         if (!controller.isGrounded) { 
@@ -45,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude > 0.01f)
         {
+            Vector3 skinRotation = skinTransform.eulerAngles;
+            skinRotation.y = Mathf.LerpAngle(skinRotation.y, Mathf.Atan2(-direction.x, -direction.z) * Mathf.Rad2Deg, playerSPEED * 1.5f * Time.deltaTime);
+            skinTransform.eulerAngles = skinRotation;
             velocity.x = direction.x * playerSPEED;
             velocity.z = direction.z * playerSPEED;
         }else
