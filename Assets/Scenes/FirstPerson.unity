@@ -278,6 +278,7 @@ MonoBehaviour:
   gravity: -9.8
   playerSPEED: 10
   playerJUMPFORCE: 6.5
+  skin: {fileID: 501865807}
 --- !u!136 &139841776
 CapsuleCollider:
   m_ObjectHideFlags: 0

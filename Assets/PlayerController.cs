@@ -16,14 +16,19 @@ public class PlayerController : MonoBehaviour
     private int jumpCount = 0;
     public float playerJUMPFORCE = 6.5f;
     public GameObject skin;
-    public Camera camera;
 
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3 (horizontal, 0f, vertical).normalized;
-        direction = Quaternion.AngleAxis(camera.transform.rotation.y, Vector3.up);
+        Quaternion cameraRotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
+
+        //direction = Quaternion.AngleAxis(cam.transform.rotation.y, Vector3.up);
+        //Vector3 cameraEuler = cam.transform.rotation.eulerAngles;
+        //Quaternion cameraRotation = Quaternion.AngleAxis(cameraEuler.y, Vector3.up);
+
+
         //Gravity
         if (!controller.isGrounded) { 
             velocity.y += gravity * Time.deltaTime;
