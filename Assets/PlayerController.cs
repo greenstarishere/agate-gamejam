@@ -3,24 +3,56 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //make and set player input variables
+    PlayerInput playerInput;
+    InputAction player_1_move;
+    InputAction player_1_jump;
+    InputAction player_1_interact;
+    InputAction player_2_move;
+    InputAction player_2_jump;
+    InputAction player_2_interact;
+
+    //set player index
+    public enum players { player_1,  player_2 };
+    [Header("Set Player Index")]
+    public players PlayerIndex;
+
+    //set general settings for character controller
+    [Header("General Player Controller Settings")]
     public CharacterController controller;
     public float gravity = -9.8f;
-    private Vector3 velocity;
-    public Animator animator;
     public float playerSPEED = 10f;
-    private int jumpCount = 0;
     public float playerJUMPFORCE = 6.5f;
+    public Animator animator;
+
+    //get the transform of additional components
+    [Header("Set Components Transform")]
     public Transform camTransfrom;
     public Transform skinTransform;
 
+    //general variable declaration
+    private int jumpCount = 0;
+    private Vector3 velocity;
+
+    private void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        player_1_move = playerInput.actions.FindAction("player_1_move");
+        player_1_jump = playerInput.actions.FindAction("player_1_jump");
+        player_1_interact = playerInput.actions.FindAction("player_1_interact");
+        player_2_move = playerInput.actions.FindAction("player_2_move");
+        player_2_jump = playerInput.actions.FindAction("player_2_jump");
+        player_2_interact = playerInput.actions.FindAction("player_2_interact");
+    }
+
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3 (horizontal, 0f, vertical).normalized;
+        Vector2 inputMap = player_1_move.ReadValue<Vector2>();
+        Vector3 direction = new Vector3(inputMap.x, 0, inputMap.y);
         direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
 
         //Gravity
@@ -33,7 +65,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        if (player_1_jump.WasPerformedThisFrame() && jumpCount < 2)
         {
             velocity.y = playerJUMPFORCE;
             jumpCount += 1;
