@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private int jumpCount = 0;
     private Vector3 velocity;
 
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -52,49 +54,90 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 inputMap = player_1_move.ReadValue<Vector2>();
-        Vector3 direction = new Vector3(inputMap.x, 0, inputMap.y);
-        direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
+        if(PlayerIndex == players.player_1)
+        {
+            Vector2 inputMap = player_1_move.ReadValue<Vector2>();
+            Vector3 direction = new Vector3(inputMap.x, 0, inputMap.y);
+            direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
 
-        //Gravity
-        if (!controller.isGrounded)
-        {
-            velocity.y += gravity * Time.deltaTime;
-            animator.SetBool("isJumping", true);
-        }
-        else
-        {
-            jumpCount = 0;
-            animator.SetBool("isJumping", false);
-        }
+            //Gravity
+            if (!controller.isGrounded)
+            {
+                velocity.y += gravity * Time.deltaTime;
+                animator.SetBool("isJumping", true);
+            }
+            else
+            {
+                jumpCount = 0;
+                animator.SetBool("isJumping", false);
+            }
 
-        if (player_1_jump.WasPerformedThisFrame() && jumpCount < 2)
-        {
-            velocity.y = playerJUMPFORCE;
-            jumpCount += 1;
-        }
+            if (player_1_jump.WasPerformedThisFrame() && jumpCount < 2)
+            {
+                velocity.y = playerJUMPFORCE;
+                jumpCount += 1;
+            }
 
-        if (direction.magnitude > 0.01f)
-        {
-            Vector3 skinRotation = skinTransform.eulerAngles;
-            skinRotation.y = Mathf.LerpAngle(skinRotation.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, playerSPEED * 1.5f * Time.deltaTime);
-            skinTransform.eulerAngles = skinRotation;
-            velocity.x = direction.x * playerSPEED;
-            velocity.z = direction.z * playerSPEED;
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            velocity.x = Mathf.MoveTowards(velocity.x, 0, playerSPEED);
-            velocity.z = Mathf.MoveTowards(velocity.z, 0, playerSPEED);
-            animator.SetBool("isMoving", false);
-        }
+            if (direction.magnitude > 0.01f)
+            {
+                Vector3 skinRotation = skinTransform.eulerAngles;
+                skinRotation.y = Mathf.LerpAngle(skinRotation.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, playerSPEED * 1.5f * Time.deltaTime);
+                skinTransform.eulerAngles = skinRotation;
+                velocity.x = direction.x * playerSPEED;
+                velocity.z = direction.z * playerSPEED;
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, playerSPEED);
+                velocity.z = Mathf.MoveTowards(velocity.z, 0, playerSPEED);
+                animator.SetBool("isMoving", false);
+            }
 
-        if (player_1_interact.WasPressedThisFrame())
-        {
-            
+            controller.Move(velocity * Time.deltaTime);
         }
+        if(PlayerIndex == players.player_2)
+        {
+            Vector2 inputMap = player_2_move.ReadValue<Vector2>();
+            Vector3 direction = new Vector3(inputMap.x, 0, inputMap.y);
+            direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
 
-        controller.Move(velocity * Time.deltaTime);
+            //Gravity
+            if (!controller.isGrounded)
+            {
+                velocity.y += gravity * Time.deltaTime;
+                animator.SetBool("isJumping", true);
+            }
+            else
+            {
+                jumpCount = 0;
+                animator.SetBool("isJumping", false);
+            }
+
+            if (player_2_jump.WasPerformedThisFrame() && jumpCount < 2)
+            {
+                velocity.y = playerJUMPFORCE;
+                jumpCount += 1;
+            }
+
+            if (direction.magnitude > 0.01f)
+            {
+                Vector3 skinRotation = skinTransform.eulerAngles;
+                skinRotation.y = Mathf.LerpAngle(skinRotation.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, playerSPEED * 1.5f * Time.deltaTime);
+                skinTransform.eulerAngles = skinRotation;
+                velocity.x = direction.x * playerSPEED;
+                velocity.z = direction.z * playerSPEED;
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, playerSPEED);
+                velocity.z = Mathf.MoveTowards(velocity.z, 0, playerSPEED);
+                animator.SetBool("isMoving", false);
+            }
+
+            controller.Move(velocity * Time.deltaTime);
+        }
     }
+
 }

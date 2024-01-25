@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using DialogueEditor;
 using UnityEngine.InputSystem;
+using TMPro;
 
 
 public class ConversationStarter : MonoBehaviour
@@ -13,6 +14,7 @@ public class ConversationStarter : MonoBehaviour
     InputAction player_2_interact;
 
     [SerializeField] private NPCConversation myConversation;
+    [SerializeField] private TextMeshProUGUI playerText; 
 
     // Define UnityEvents for different stages of the conversation
     public UnityEvent onPlayerEnterTrigger; // Event when the player enters the trigger
@@ -28,10 +30,19 @@ public class ConversationStarter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        if (playerController != null)
         {
-            // Invoke the event when the player enters the trigger
-            onPlayerEnterTrigger.Invoke();
+            if (playerController.PlayerIndex == PlayerController.players.player_1)
+            {
+                playerText.text = "Press (E) to Interact";
+                onPlayerEnterTrigger.Invoke();
+            }
+            else if (playerController.PlayerIndex == PlayerController.players.player_2)
+            {
+                playerText.text = "Press (O) to Interact";
+                onPlayerEnterTrigger.Invoke();
+            }
         }
     }
 
