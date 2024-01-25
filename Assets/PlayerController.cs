@@ -56,10 +56,12 @@ public class PlayerController : MonoBehaviour
         direction = Quaternion.AngleAxis(camTransfrom.eulerAngles.y, Vector3.up) * direction;
 
         //Gravity
-        if (!controller.isGrounded) { 
+        if (!controller.isGrounded)
+        {
             velocity.y += gravity * Time.deltaTime;
             animator.SetBool("isJumping", true);
-        }else
+        }
+        else
         {
             jumpCount = 0;
             animator.SetBool("isJumping", false);
@@ -79,7 +81,8 @@ public class PlayerController : MonoBehaviour
             velocity.x = direction.x * playerSPEED;
             velocity.z = direction.z * playerSPEED;
             animator.SetBool("isMoving", true);
-        }else
+        }
+        else
         {
             velocity.x = Mathf.MoveTowards(velocity.x, 0, playerSPEED);
             velocity.z = Mathf.MoveTowards(velocity.z, 0, playerSPEED);
