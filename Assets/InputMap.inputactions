@@ -31,6 +31,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "player_2_move",
+                    "type": "Value",
+                    "id": "5e7fb671-2446-4331-91ce-d39317080ad7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "player_2_jump",
+                    "type": "Button",
+                    "id": "64dd23c8-b47a-4f43-bf3d-393677efa474",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "player_2_interact",
+                    "type": "Button",
+                    "id": "fd4f65a6-b2e0-4520-968e-21a46cc7c64f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -38,7 +65,7 @@
                     "name": "",
                     "id": "44d8f04e-65f5-4bb2-ae58-43ff09505507",
                     "path": "<Keyboard>/e",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "player_1_interact",
@@ -108,6 +135,83 @@
                     "processors": "",
                     "groups": "",
                     "action": "player_1_jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "00b7c6c2-b728-4005-8cce-301ef060162e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "13a7b895-7467-443d-9c52-0f169d77ad4d",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b84d864a-c8d3-4543-8aef-4b7d4ab4cae1",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "12787750-86e7-494f-9bcc-dc5f18703843",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "4ee41089-4dfe-4699-a28a-331857f24930",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "984b8531-2608-4a22-bfd4-1f44491faa65",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c51e4fa6-8e07-4618-a980-3810804d44eb",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "player_2_interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
