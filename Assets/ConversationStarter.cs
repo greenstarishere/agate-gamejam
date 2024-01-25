@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class ConversationStarter : MonoBehaviour
 {
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
     InputAction player_1_interact;
     InputAction player_2_interact;
 
@@ -22,7 +22,6 @@ public class ConversationStarter : MonoBehaviour
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
         player_1_interact = playerInput.actions.FindAction("player_1_interact");
         player_2_interact = playerInput.actions.FindAction("player_2_interact");
     }
@@ -46,7 +45,7 @@ public class ConversationStarter : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) || other.CompareTag("Player") && Input.GetKeyDown(KeyCode.O))
+        if (player_1_interact.WasPerformedThisFrame() || player_2_interact.WasPerformedThisFrame())
         {
             Debug.Log("pencet");
             // Invoke the start event and start the conversation
