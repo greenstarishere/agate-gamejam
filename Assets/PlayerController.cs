@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float playerJUMPFORCE = 6.5f;
     public Animator animator;
 
+
     //get the transform of additional components
     [Header("Set Components Transform")]
     public Transform camTransfrom;
@@ -87,6 +88,11 @@ public class PlayerController : MonoBehaviour
             velocity.x = Mathf.MoveTowards(velocity.x, 0, playerSPEED);
             velocity.z = Mathf.MoveTowards(velocity.z, 0, playerSPEED);
             animator.SetBool("isMoving", false);
+        }
+
+        if (player_1_interact.WasPressedThisFrame())
+        {
+            
         }
 
         controller.Move(velocity * Time.deltaTime);
