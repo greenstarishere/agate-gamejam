@@ -880,6 +880,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 393300200}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &446492470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446492472}
+  - component: {fileID: 446492471}
+  m_Layer: 0
+  m_Name: scoreCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &446492471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446492470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecbd72d82102ee40a7ca5786e3bc5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &446492472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446492470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 969739572}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &564910205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1758,8 +1802,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 3
-  json: '{"Options":[{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-15.6000061,"yPos":188.8},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Hi","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":206,"yPos":189.8},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"test","parentUIDs":[0],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":true,"xPos":67.29999,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"hello","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  CurrentIDCounter: 9
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":-265.6,"yPos":221.800034},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    a","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":-35.00003,"yPos":224.800034},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    b","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":193.099976,"yPos":220.800064},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    c","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":-228,"yPos":456.8},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    a","parentUIDs":[4],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":-14,"yPos":456.8},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    b","parentUIDs":[4],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":198,"yPos":453.8},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"option
+    c","parentUIDs":[4],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":true,"xPos":-34.7000122,"yPos":52},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"hi","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"terminal","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":5},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":6},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":-42,"yPos":325.800018},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"your
+    score is on the console","parentUIDs":[1,2,3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"terminal","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-47,"yPos":550.8},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"your
+    score is on the console","parentUIDs":[5,6,7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"terminal","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -1768,6 +1820,12 @@ MonoBehaviour:
   - {fileID: 2035106225}
   - {fileID: 2035106227}
   - {fileID: 2035106228}
+  - {fileID: 2035106234}
+  - {fileID: 2035106233}
+  - {fileID: 2035106232}
+  - {fileID: 2035106231}
+  - {fileID: 2035106230}
+  - {fileID: 2035106229}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -1786,9 +1844,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1831630376}
-  - {fileID: 1775373538}
   - {fileID: 2035106226}
+  - {fileID: 1559273552}
   - {fileID: 2006280810}
+  - {fileID: 446492472}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2859,6 +2918,113 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1470056256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1559273551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559273552}
+  - component: {fileID: 1559273553}
+  m_Layer: 0
+  m_Name: dialog_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559273552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559273551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 969739572}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559273553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559273551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b17967b734e8de459d5584d7bbc4e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  RecognitionInterval: 2
+  RecognitionBehavior: 1
+  Confidence: 2
+  Keywords:
+  - option a
+  - option b
+  - option c
+  dictionary: []
+  usingEventSetting: 1
+  EventSpeech:
+  - SpeechRecognized:
+    - option a
+    SpeechEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2006280811}
+          m_TargetAssemblyTypeName: optionSelectComponent, Assembly-CSharp
+          m_MethodName: selectButton
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - SpeechRecognized:
+    - option b
+    SpeechEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2006280811}
+          m_TargetAssemblyTypeName: optionSelectComponent, Assembly-CSharp
+          m_MethodName: selectButton
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - SpeechRecognized:
+    - option c
+    SpeechEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2006280811}
+          m_TargetAssemblyTypeName: optionSelectComponent, Assembly-CSharp
+          m_MethodName: selectButton
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  TargetString: 
 --- !u!1001 &1598832023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3493,151 +3659,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 220118750}
---- !u!1001 &1775373537
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 969739572}
-    m_Modifications:
-    - target: {fileID: 347740687848780473, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_Name
-      value: Windows.SpeechRecognition
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 751.54504
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 401.4359
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -789.3317
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: Confidence
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: usingEventSetting
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: Keywords.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: Keywords.Array.data[0]
-      value: hi
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechRecognized.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechRecognized.Array.data[0]
-      value: hi
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2006280811}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: selectButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: optionSelectComponent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722826365466500614, guid: 854308ac353db4943aeabcf05f7ef775,
-        type: 3}
-      propertyPath: EventSpeech.Array.data[0].SpeechEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 854308ac353db4943aeabcf05f7ef775, type: 3}
---- !u!4 &1775373538 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1678085534134267104, guid: 854308ac353db4943aeabcf05f7ef775,
-    type: 3}
-  m_PrefabInstance: {fileID: 1775373537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1808752355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4316,6 +4337,12 @@ GameObject:
   - component: {fileID: 2035106225}
   - component: {fileID: 2035106227}
   - component: {fileID: 2035106228}
+  - component: {fileID: 2035106234}
+  - component: {fileID: 2035106233}
+  - component: {fileID: 2035106232}
+  - component: {fileID: 2035106231}
+  - component: {fileID: 2035106230}
+  - component: {fileID: 2035106229}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -4355,7 +4382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969739572}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2035106227
 MonoBehaviour:
@@ -4371,7 +4398,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 1
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
@@ -4390,8 +4429,206 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 2
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: debugScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 8
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 7
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 6
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 5
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: debugScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 4
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2035106234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035106224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 446492471}
+        m_TargetAssemblyTypeName: scoreCollector, Assembly-CSharp
+        m_MethodName: addScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 3
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
