@@ -140,4 +140,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "pushable")
+        {
+            Debug.Log("there is pushable");
+            Rigidbody rigidbody = hit.collider.attachedRigidbody;
+            if (rigidbody != null)
+            {
+                Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
+
+                if (forceDirection.y > -1f)
+                {
+                    Debug.Log(forceDirection);
+                    forceDirection.y = 0;
+                    forceDirection.Normalize();
+
+                    rigidbody.AddForceAtPosition(forceDirection * playerSPEED * Time.deltaTime, transform.position, ForceMode.Impulse);
+                }
+            }
+        }
+    }
+
 }
