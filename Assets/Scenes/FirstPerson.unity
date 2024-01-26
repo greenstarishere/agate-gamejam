@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 139841779}
-  - component: {fileID: 139841776}
+  - component: {fileID: 139841782}
   - component: {fileID: 139841780}
   - component: {fileID: 139841775}
   - component: {fileID: 139841781}
@@ -355,25 +355,11 @@ MonoBehaviour:
   PlayerIndex: 0
   controller: {fileID: 139841780}
   gravity: -9.8
-  playerSPEED: 10
-  playerJUMPFORCE: 6.5
+  playerSPEED: 6
+  playerJUMPFORCE: 4
   animator: {fileID: 2107182990}
   camTransfrom: {fileID: 59515373}
   skinTransform: {fileID: 501865808}
---- !u!136 &139841776
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139841774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7821548
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.20251107, z: 0}
 --- !u!4 &139841779
 Transform:
   m_ObjectHideFlags: 0
@@ -401,13 +387,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.48
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.26, z: 0}
 --- !u!114 &139841781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +425,19 @@ MonoBehaviour:
   m_DefaultActionMap: players
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &139841782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139841774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42833343, y: 1.8257068, z: 0.60748094}
+  m_Center: {x: 0, y: -0.14935988, z: 0}
 --- !u!1 &198994751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,7 +2110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333127541}
-  - component: {fileID: 1333127540}
+  - component: {fileID: 1333127542}
   - component: {fileID: 1333127539}
   - component: {fileID: 1333127538}
   - component: {fileID: 1333127537}
@@ -2168,8 +2167,8 @@ MonoBehaviour:
   PlayerIndex: 1
   controller: {fileID: 1333127539}
   gravity: -9.8
-  playerSPEED: 10
-  playerJUMPFORCE: 6.5
+  playerSPEED: 6
+  playerJUMPFORCE: 4
   animator: {fileID: 1468899728}
   camTransfrom: {fileID: 59515373}
   skinTransform: {fileID: 1713061707}
@@ -2184,27 +2183,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.48
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1333127540
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333127536}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7821548
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.20251107, z: 0}
+  m_Center: {x: 0, y: -0.26, z: 0}
 --- !u!4 &1333127541
 Transform:
   m_ObjectHideFlags: 0
@@ -2221,6 +2206,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1333127542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333127536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42833343, y: 1.8257068, z: 0.60748094}
+  m_Center: {x: 0, y: -0.14935988, z: 0}
 --- !u!1 &1349214474
 GameObject:
   m_ObjectHideFlags: 0
