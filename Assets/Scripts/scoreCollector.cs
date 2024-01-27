@@ -47,6 +47,7 @@ public class scoreCollector : MonoBehaviour
         timer.SetActive(false);
         lerpedScore = score;
         score += points;
+        ConversationManager.Instance.SetInt("finalScore", Mathf.CeilToInt(score / maxScore * 100));
         currentState = animState.changing;
     }
 
