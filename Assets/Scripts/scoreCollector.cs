@@ -19,6 +19,8 @@ public class scoreCollector : MonoBehaviour
 
     public int totalBranch;
     public ProgressBar progressBar;
+    public GameObject timer;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -39,6 +41,10 @@ public class scoreCollector : MonoBehaviour
     }
     public void addScore(int points)
     {
+        Timers timerComponent = timer.GetComponent<Timers>();
+        timerComponent.StopTimer();
+        timerComponent.Reset();
+        timer.SetActive(false);
         lerpedScore = score;
         score += points;
         currentState = animState.changing;

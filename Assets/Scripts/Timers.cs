@@ -7,27 +7,35 @@ using UnityEngine.Events;
 public class Timers : MonoBehaviour
 {
     public Slider timerSlider;
-    public float sliderTimer;
+    private float sliderTimer;
     public bool stopTimer = false;
     public UnityEvent timerOut;
+    public float defaultTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerSlider.maxValue = sliderTimer;
-        timerSlider.value = sliderTimer;
+        timerSlider.maxValue = defaultTime;
+        timerSlider.value = defaultTime;
+        sliderTimer = defaultTime;
     }
     
+    public void StopTimer()
+    {
+        stopTimer = true;
+    }
+
     public void StartTimer()
     {
         StartCoroutine(StartTheTimerTicker());
+        stopTimer = false;
     }
 
     IEnumerator StartTheTimerTicker()
     {
         while (stopTimer == false)
         {
-            sliderTimer -= Time.deltaTime;
+            sliderTimer -= Time.deltaTime / 2;
             yield return new WaitForSeconds(0.001f);
 
             if(sliderTimer <= 0)
@@ -45,7 +53,8 @@ public class Timers : MonoBehaviour
 
     public void Reset()
     {
-        timerSlider.maxValue = sliderTimer;
-        timerSlider.value = sliderTimer;
+        timerSlider.maxValue = defaultTime;
+        timerSlider.value = defaultTime;
+        sliderTimer = defaultTime;
     }
 }
