@@ -38,7 +38,7 @@ namespace DialogueEditor
         public Sprite OptionImage;
         public bool OptionImageSliced;
         public bool AllowMouseInteraction;
-
+        public UnityEvent AddButton;
         // Non-User facing 
         // Not exposed via custom inspector
         // 
@@ -81,6 +81,7 @@ namespace DialogueEditor
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
 
+        
 
         //--------------------------------------
         // Awake, Start, Destroy, Update
@@ -754,6 +755,7 @@ namespace DialogueEditor
         {
             UIConversationButton button = GameObject.Instantiate(ButtonPrefab, OptionsPanel);
             m_uiOptions.Add(button);
+            AddButton.Invoke();
             return button;
         }
 

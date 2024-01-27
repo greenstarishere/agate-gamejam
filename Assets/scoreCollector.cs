@@ -7,8 +7,8 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class scoreCollector : MonoBehaviour
 {
-    int score;
-    int maxScore;
+    float score;
+    float maxScore;
 
     public int totalBranch;
     public ProgressBar progressBar;
@@ -24,7 +24,7 @@ public class scoreCollector : MonoBehaviour
         displayScore();
     }
 
-    public int getScore()
+    public float getScore()
     {
         return score;
     }
