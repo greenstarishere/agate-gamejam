@@ -1,3 +1,4 @@
+using Michsky.UI.Heat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,20 @@ using UnityEngine.UI;
 public class scoreCollector : MonoBehaviour
 {
     int score;
+    int maxScore;
+
+    public int totalBranch;
+    public ProgressBar progressBar;
 
     // Start is called before the first frame update
+    private void Start()
+    {
+        maxScore = totalBranch * 10;
+    }
     public void addScore(int points)
     {
         score += points;
+        displayScore();
     }
 
     public int getScore()
@@ -23,4 +33,11 @@ public class scoreCollector : MonoBehaviour
     {
         Debug.Log(score);
     }
+
+    public void displayScore()
+    {
+        float calcScore = score / maxScore * 100;
+        progressBar.SetValue(calcScore);
+    }
+
 }
