@@ -9,8 +9,13 @@ using DialogueEditor;
 [ExecuteInEditMode]
 public class scoreCollector : MonoBehaviour
 {
+
+    enum animState { idle, changing}
+    animState currentState;
+
     float score;
     float maxScore;
+    float lerpedScore;
 
     public int totalBranch;
     public ProgressBar progressBar;
@@ -20,10 +25,23 @@ public class scoreCollector : MonoBehaviour
     {
         maxScore = totalBranch * 10;
     }
+
+    private void Update()
+    {
+        switch (currentState)
+        {
+            case animState.idle:
+                break;
+            case animState.changing:
+                displayScore();
+                break;
+        }
+    }
     public void addScore(int points)
     {
+        lerpedScore = score;
         score += points;
-        displayScore();
+        currentState = animState.changing;
     }
 
     public float getScore()
@@ -38,7 +56,8 @@ public class scoreCollector : MonoBehaviour
 
     public void displayScore()
     {
-        float calcScore = score / maxScore * 100;
+        lerpedScore = Mathf.Lerp(lerpedScore, score, 5 * Time.deltaTime);
+        float calcScore = lerpedScore / maxScore * 100;
         progressBar.SetValue(calcScore);
     }
 }
