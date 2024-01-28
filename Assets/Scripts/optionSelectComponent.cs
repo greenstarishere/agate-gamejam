@@ -5,7 +5,7 @@ using DialogueEditor;
 
 public class optionSelectComponent : MonoBehaviour
 {
-
+    public int worseIndex {  get; set; }
     public GameObject panel;
 
     // Start is called before the first frame update
@@ -27,6 +27,13 @@ public class optionSelectComponent : MonoBehaviour
         UIConversationButton targetButton = childs[index];
         targetButton.OnHover(true);
         targetButton.OnClick();
+    }
 
+    public void selectWorseButton()
+    {
+        UIConversationButton[] childs = panel.GetComponentsInChildren<UIConversationButton>();
+        UIConversationButton targetButton = childs[worseIndex];
+        targetButton.OnHover(true);
+        targetButton.OnClick();
     }
 }

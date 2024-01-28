@@ -36,8 +36,8 @@ MonoBehaviour:
   localizationSettings: {fileID: 11400000, guid: 2cbd73cf0fc79bf4ab2e27e18b1ba7c8,
     type: 2}
   currentLanguage: {fileID: 11400000, guid: 7f0d34462af20e740a7fc45541f666a0, type: 2}
-  brandLogo: {fileID: 21300000, guid: 7e9275a0a8f0af74e91d4e0bf4119592, type: 3}
-  gameLogo: {fileID: 21300000, guid: db29e29da505c4348be353a9303e4de2, type: 3}
+  brandLogo: {fileID: 21300000, guid: f88822b334f4f7944be80c1964bdfe26, type: 3}
+  gameLogo: {fileID: 21300000, guid: f88822b334f4f7944be80c1964bdfe26, type: 3}
   enableSplashScreen: 1
   showSplashScreenOnce: 1
   pakType: 0

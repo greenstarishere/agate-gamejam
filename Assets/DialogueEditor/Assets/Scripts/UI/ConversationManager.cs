@@ -38,6 +38,7 @@ namespace DialogueEditor
         public Sprite OptionImage;
         public bool OptionImageSliced;
         public bool AllowMouseInteraction;
+        public UnityEvent AddButton;
 
         // Non-User facing 
         // Not exposed via custom inspector
@@ -754,6 +755,8 @@ namespace DialogueEditor
         {
             UIConversationButton button = GameObject.Instantiate(ButtonPrefab, OptionsPanel);
             m_uiOptions.Add(button);
+            AddButton.Invoke();
+
             return button;
         }
 
